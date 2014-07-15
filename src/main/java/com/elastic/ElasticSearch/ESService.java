@@ -1,4 +1,4 @@
-package com.cellebrite.ElasticSearch;
+package com.elastic.ElasticSearch;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,6 @@
 package com.test;
 
-import com.cellebrite.ElasticSearch.ESOperations;
+import com.elastic.ElasticSearch.ESOperations;
 import org.junit.Test;
 
 import javax.inject.Inject;

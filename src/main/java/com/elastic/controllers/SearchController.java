@@ -1,7 +1,7 @@
-package com.cellebrite.controllers;
+package com.elastic.controllers;
 
 
-import com.cellebrite.ElasticSearch.ESService;
+import com.elastic.ElasticSearch.ESService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

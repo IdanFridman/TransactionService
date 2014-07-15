@@ -1,4 +1,4 @@
-package com.cellebrite.ElasticSearch;
+package com.elastic.ElasticSearch;
 
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;

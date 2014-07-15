@@ -1,19 +1,12 @@
-package com.cellebrite.ElasticSearch;
+package com.elastic.ElasticSearch;
 
-import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
-import org.elasticsearch.common.xcontent.XContentBuilder;
-import org.elasticsearch.common.xcontent.XContentFactory;
-import org.elasticsearch.common.xcontent.XContentType;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.inject.Inject;
 import javax.inject.Named;
-import java.io.IOException;
-import java.util.Date;
 
 /**
  * Created by idanf on 08/07/2014.

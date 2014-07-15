@@ -29,7 +29,7 @@
     <category name="org.springframework">
         <priority value="DEBUG"/>
     </category>
-    <category name="com.cellebrite">
+    <category name="com.elastic">
         <priority value="DEBUG"/>
     </category>
 
