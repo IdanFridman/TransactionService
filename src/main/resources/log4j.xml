@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %t [%c] %x - %m%n"/>
+        </layout>
+    </appender>
+
+
+    <appender name="file" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="/logs/CisManager.log"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%t] %x - %m%n"/>
+        </layout>
+    </appender>
+
+
+    <category name="org.springframework.security">
+        <priority value="DEBUG"/>
+    </category>
+    <category name="org.springframework">
+        <priority value="DEBUG"/>
+    </category>
+    <category name="com.cellebrite">
+        <priority value="DEBUG"/>
+    </category>
+
+    <category name="com.elasticsearch">
+        <priority value="trace"/>
+    </category>
+
+    <category name="org.elasticsearch">
+        <priority value="trace"/>
+    </category>
+
+
+    <root>
+        <priority value="info"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+
+</log4j:configuration>
