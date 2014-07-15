@@ -17,7 +17,7 @@ import javax.inject.Inject;
  */
 
 @Controller
-@RequestMapping("/search1")
+@RequestMapping("/search")
 public class SearchController {
 
     @Inject
