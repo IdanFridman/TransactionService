@@ -37,7 +37,7 @@ function handleClick() {
         })
         jsonArr.push({
             "UmeIP": "192.168.21.118",
-            "UmeSerialNumber": "5700122",
+            "UmeSerialNumber": "5700122888",
             "transaction": [
                 { "UmeSerialNumber": "5700122",
                     "UmeApplicationVersion": "![CDATA[1.3.4190.22770 RadioShack]",
