@@ -31,7 +31,7 @@ public class ESOperationsTest extends CommonServicesAbstractTest{
 
     @Test
     public void queryDoc() throws IOException {
-        elasticIndexing.search();
+        elasticIndexing.searchTerm("CDATA");
 
 
     }

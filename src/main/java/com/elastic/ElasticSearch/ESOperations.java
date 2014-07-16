@@ -47,11 +47,11 @@ public class ESOperations {
 
     }
 
-    public void search() {
-        SearchResponse response = ESClient.getClient().prepareSearch("website", "my_index")
-            .setTypes("my_type")
+    public List<Object> searchTerm(String searchTerm) {
+        SearchResponse response = ESClient.getClient().prepareSearch("cellebrite","website", "my_index")
+            .setTypes("my_type","transaction")
             .setSearchType(SearchType.DEFAULT)
-            .setQuery(QueryBuilders.queryString("The quick"))             // Query
+            .setQuery(QueryBuilders.queryString(searchTerm))             // Query
                 // .setPostFilter(FilterBuilders.rangeFilter("age").from(12).to(18))   // Filter
             .setFrom(0).setSize(60).setExplain(true)
             .execute()
@@ -62,13 +62,15 @@ public class ESOperations {
         log.info("Number of docs=" + String.valueOf(docs.length));
 
 
-         List<Object> result=Arrays.asList(response.getHits().getHits()).stream().
-             map(hit -> new HashMap<String, Object>(hit.getSource())).collect(Collectors.toList());
+        List<Object> result = Arrays.asList(response.getHits().getHits()).stream().
+            map(hit -> new HashMap<String, Object>(hit.getSource())).collect(Collectors.toList());
+
+        log.info("results=" + result.toString());
+        return result;
 
 
-        log.info(result.toString());
 
-           // Map<String, Object> source = hit.getSource();
+        // Map<String, Object> source = hit.getSource();
 
 
     }

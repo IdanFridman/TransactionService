@@ -19,7 +19,7 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
-    <mvc:resources mapping="/pages/**" location="/WEB-INF/pages/" />
+    <mvc:resources mapping="/pages/**" location="/WEB-INF/pages/"/>
 
     <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven />

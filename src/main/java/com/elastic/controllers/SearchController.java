@@ -32,10 +32,10 @@ public class SearchController {
         return ("something");
     }
 
-    @RequestMapping(value = "/ajaxcall", method = RequestMethod.GET)
+    @RequestMapping(value = "/searchTerm", method = RequestMethod.GET)
     @ResponseBody
     public String search(String termToSearch) {
-        logger.debug(termToSearch);
-        return "hello " + termToSearch;
+        logger.debug("termToSearch" + termToSearch);
+        return esService.searchTerm(termToSearch);
     }
 }

@@ -3,6 +3,8 @@ package com.elastic.ElasticSearch;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -13,13 +15,15 @@ import javax.inject.Named;
  */
 @Named
 public class ESClient {
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
     Client client = null;
 
 
 
     @PostConstruct
     public void initClient() {
-        System.out.println("testInit");
+        log.info("init ES client");
         client = new TransportClient()
             .addTransportAddress(new InetSocketTransportAddress("localhost", 9300))
             .addTransportAddress(new InetSocketTransportAddress("localhost", 9300));
@@ -28,7 +32,7 @@ public class ESClient {
 
     @PreDestroy
     public void shutDownClient() {
-        System.out.println("Shutdown client");
+        log.info("Shutdown ES client");
         client.close();
 
     }
