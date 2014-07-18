@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import java.util.List;
 
 
 /**
@@ -34,7 +35,7 @@ public class SearchController {
 
     @RequestMapping(value = "/searchTerm", method = RequestMethod.GET)
     @ResponseBody
-    public String search(String termToSearch) {
+    public List<Object> search(String termToSearch) {
         logger.debug("termToSearch" + termToSearch);
         return esService.searchTerm(termToSearch);
     }

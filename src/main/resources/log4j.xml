@@ -33,6 +33,10 @@
         <priority value="DEBUG"/>
     </category>
 
+    <category name="com.test">
+        <priority value="DEBUG"/>
+    </category>
+
     <category name="com.elasticsearch">
         <priority value="trace"/>
     </category>

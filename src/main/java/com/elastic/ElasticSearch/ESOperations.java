@@ -26,12 +26,12 @@ public class ESOperations {
 
 
     @Inject
-    ESClient ESClient;
+    ESClient esClient;
 
 
 
     public void index() throws IOException {
-        IndexResponse response = ESClient.getClient().prepareIndex("website", "blog", "123")
+        IndexResponse response = esClient.getClient().prepareIndex("website", "blog", "123")
             .setSource(XContentFactory.jsonBuilder()
                     .startObject()
                     .field("title", "My first blog entry222")
@@ -48,7 +48,7 @@ public class ESOperations {
     }
 
     public List<Object> searchTerm(String searchTerm) {
-        SearchResponse response = ESClient.getClient().prepareSearch("cellebrite","website", "my_index")
+        SearchResponse response = esClient.getClient().prepareSearch("cellebrite","website", "my_index")
             .setTypes("my_type","transaction")
             .setSearchType(SearchType.DEFAULT)
             .setQuery(QueryBuilders.queryString(searchTerm))             // Query

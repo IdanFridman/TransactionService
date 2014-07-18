@@ -18,9 +18,9 @@ public class ESService {
     @Inject
     ESOperations esOperations;
 
-    public String searchTerm(String searchTerm) {
+    public List<Object> searchTerm(String searchTerm) {
         List<Object> result = esOperations.searchTerm(searchTerm);
-        return "";
+        return result;
 
     }
 
