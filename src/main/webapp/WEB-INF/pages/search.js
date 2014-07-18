@@ -26,7 +26,7 @@ function handleClick() {
             "UmeIP": "192.168.21.118",
             "UmeSerialNumber": "5700122",
             "transaction": [
-                { "UmeSerialNumber": "5700122",
+                { "UmeSerialNumber": "57001223",
                     "UmeApplicationVersion": "![CDATA[1.3.4190.22770 RadioShack]",
                     "TransactionTimeDate": "2011-06-30 11:03:20",
                     "TransactionStatus": "3",
