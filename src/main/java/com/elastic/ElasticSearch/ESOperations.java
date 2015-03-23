@@ -22,8 +22,8 @@ import java.util.stream.Collectors;
 @Named
 public class ESOperations {
 
-    public static final String INDEX_NAME = "mycompany";
-    public static final String TYPE_NAME = "login";
+    public static final String INDEX_NAME = "indexName";
+    public static final String TYPE_NAME = "typeName";
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 
@@ -36,9 +36,8 @@ public class ESOperations {
         IndexResponse response = esClient.getClient().prepareIndex(INDEX_NAME, TYPE_NAME)
             .setSource(XContentFactory.jsonBuilder()
                     .startObject()
-                    .field("username", "Jossef")
-                    .field("location", "Israel")
-                    .field("date", new Date())
+                 //   .field("fieldName", "fieldValue")
+
                     .endObject()
             )
             .execute()
