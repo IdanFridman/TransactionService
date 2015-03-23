@@ -22,6 +22,8 @@ import java.util.stream.Collectors;
 @Named
 public class ESOperations {
 
+    public static final String INDEX_NAME = "mycompany";
+    public static final String TYPE_NAME = "login";
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 
@@ -31,12 +33,12 @@ public class ESOperations {
 
 
     public void index() throws IOException {
-        IndexResponse response = esClient.getClient().prepareIndex("website", "blog", "123")
+        IndexResponse response = esClient.getClient().prepareIndex(INDEX_NAME, TYPE_NAME)
             .setSource(XContentFactory.jsonBuilder()
                     .startObject()
-                    .field("title", "My first blog entry222")
-                    .field("text", "trying this out")
-                    .field("datee", new Date())
+                    .field("username", "Jossef")
+                    .field("location", "Israel")
+                    .field("date", new Date())
                     .endObject()
             )
             .execute()
@@ -48,8 +50,8 @@ public class ESOperations {
     }
 
     public List<Object> searchTerm(String searchTerm) {
-        SearchResponse response = esClient.getClient().prepareSearch("cellebrite","website", "my_index")
-            .setTypes("my_type","transaction")
+        SearchResponse response = esClient.getClient().prepareSearch(INDEX_NAME)
+            .setTypes(TYPE_NAME)
             .setSearchType(SearchType.DEFAULT)
             .setQuery(QueryBuilders.queryString(searchTerm))             // Query
                 // .setPostFilter(FilterBuilders.rangeFilter("age").from(12).to(18))   // Filter

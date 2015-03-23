@@ -36,10 +36,8 @@ public class ESOperationsTest extends CommonServicesAbstractTest {
 
     @Test
     public void queryDoc() throws IOException {
-        List<Object> result = elasticIndexing.searchTerm("CDATA");
+        List<Object> result = elasticIndexing.searchTerm("Jossef");
         result.stream().forEach(item -> log.info(item.toString()));
-        int z=0;
-        z++;
     }
 
 

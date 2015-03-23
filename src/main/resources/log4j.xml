@@ -13,19 +13,6 @@
         </layout>
     </appender>
 
-
-    <appender name="file" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="/logs/CisManager.log"/>
-        <param name="Encoding" value="UTF-8"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d %-5p [%t] %x - %m%n"/>
-        </layout>
-    </appender>
-
-
-    <category name="org.springframework.security">
-        <priority value="DEBUG"/>
-    </category>
     <category name="org.springframework">
         <priority value="DEBUG"/>
     </category>
@@ -49,7 +36,6 @@
     <root>
         <priority value="info"/>
         <appender-ref ref="console"/>
-        <appender-ref ref="file"/>
     </root>
 
 </log4j:configuration>
