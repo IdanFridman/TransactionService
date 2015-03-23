@@ -26,7 +26,7 @@ public class ESClient {
         log.info("init ES client");
         client = new TransportClient()
             .addTransportAddress(new InetSocketTransportAddress("localhost", 9300))
-            .addTransportAddress(new InetSocketTransportAddress("localhost", 9300));
+            .addTransportAddress(new InetSocketTransportAddress("127.0.0.1", 9300));
 
     }
 
